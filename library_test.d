@@ -10,7 +10,7 @@ void main()
 
 string[] dubShellCommand() pure nothrow
 {
-    return ["dub", "run", "--verror"] ~ dubArch;
+    return ["dub", "run", "--verror", dubArch];
 }
 
 void executeCommand(const string[] args ...)
@@ -30,14 +30,14 @@ void executeCommand(const string[] args ...)
 string dubArch() pure nothrow
 {
     version (Win64)
-        return " --arch=x86_64";
+        return "--arch=x86_64";
 
     else version (Win32)
     {
         version (DigitalMars)
-            return " --arch=x86_mscoff";
+            return "--arch=x86_mscoff";
         else
-            return " --arch=x86";
+            return "--arch=x86";
     }
 
     else
