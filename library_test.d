@@ -10,7 +10,7 @@ void main()
 
 string[] dubShellCommand() pure nothrow
 {
-    return ["dub", "run", "--verror", dubArch];
+    return ["dub", "run", "--verror"];
 }
 
 void executeCommand(const string[] args ...)
